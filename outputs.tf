@@ -1,3 +1,7 @@
+output "stream_analytics_clusters_id" {
+  description = "Map of id values across all stream_analytics_clusters, keyed the same as var.stream_analytics_clusters"
+  value       = { for k, v in azurerm_stream_analytics_cluster.stream_analytics_clusters : k => v.id }
+}
 output "stream_analytics_clusters_location" {
   description = "Map of location values across all stream_analytics_clusters, keyed the same as var.stream_analytics_clusters"
   value       = { for k, v in azurerm_stream_analytics_cluster.stream_analytics_clusters : k => v.location }
